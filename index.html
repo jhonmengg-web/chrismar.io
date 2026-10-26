@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Chat Online</title>
+  <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+  <main id="auth-screen" class="chat auth">
+    <h1>Class Chat</h1>
+    <p class="subtitle">Log in to join the conversation.</p>
+    <form id="auth-form">
+      <label for="display-name">Display name (sign up only)</label>
+      <input id="display-name" type="text" maxlength="24" placeholder="Your name or nickname" autocomplete="nickname">
+      <label for="email">Email</label>
+      <input id="email" type="email" required placeholder="you@school.com" autocomplete="email">
+      <label for="password">Password (at least 8 characters)</label>
+      <input id="password" type="password" minlength="8" required autocomplete="current-password">
+      <div class="auth-buttons">
+        <button id="login-btn" type="submit">Log in</button>
+        <button id="signup-btn" type="button" class="ghost">Sign up</button>
+      </div>
+    </form>
+    <p id="auth-message" role="status"></p>
+  </main>
+  <main id="chat-screen" class="chat" hidden>
+    <header class="chat-header">
+      <h1>Class Chat</h1>
+      <div class="controls"><span id="who">Signed in</span><button id="logout-btn" type="button" class="ghost">Log out</button></div>
+    </header>
+   
+      </button>
+    </div>
+    <p id="connection-status" role="status">Connecting…</p>
+    <ul id="messages" class="messages" aria-live="polite" aria-label="Chat messages"></ul>
+    <p id="chat-message" role="status"></p>
+    <form id="message-form" class="composer" autocomplete="off">
+      <label class="visually-hidden" for="message-input">Message</label>
+      <input id="message-input" type="text" maxlength="500" required placeholder="Type a message or /weather Manila">
+      <button id="send-btn" type="submit">Send</button>
+    </form>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.1"></script>
+  <script src="script.js"></script>
+</body>
+</html>
